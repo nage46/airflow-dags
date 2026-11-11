@@ -23,7 +23,7 @@ with DAG(dag_id='load_sample_json_to_s3', start_date=datetime(2023,9,29), schedu
             json_object = 'Hello from airflow to s3'
             s3_client.put_object(
                 Body=json.dumps(json_object),
-                Bucket='airflow-user-posts-data',
+                Bucket='nage-airflow-user-posts-data',
                 Key='dummy_data/airflow_msg.json'
             )
         except ClientError as e:
