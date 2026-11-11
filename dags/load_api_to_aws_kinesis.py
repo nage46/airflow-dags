@@ -21,7 +21,7 @@ def _set_api_user_id(api_user_id, **context):
         if api_user_id == -1 or api_user_id == 10:
             Variable.set(key="api_user_id", value=str(1))  
         else:
-            Variable.set(key="api_user_id", value=str(int(api_user_id))+1) 
+            Variable.set(key="api_user_id", value=str(int(api_user_id)+1))
         return f"Latest api user id {int(Variable.get(key='api_user_id'))} sucessfully"
     except Exception as e:
         logger.info(f'ERROR WHILE SETTING UP userId param value:: {e}')
